@@ -20,27 +20,27 @@ Java solutions to problems in the book Cracking the Coding Interview(6th Edition
 
 ### Arrays and Strings
 
-- [Check Permutation](./src/chapter01ArraysAndStrings/CheckPermutation.java) <br />
-- [Is Unique](./src/chapter01ArraysAndStrings/IsUnique.java) <br />
-- [One Away](./src/chapter01ArraysAndStrings/OneAway.java) <br />
-- [Palindrome Permutation](./src/chapter01ArraysAndStrings/PalindromePermutation.java) <br />
-- [Rotate Matrix](./src/chapter01ArraysAndStrings/RotateMatrix.java) <br />
-- [String Compression](./src/chapter01ArraysAndStrings/StringCompression.java) <br />
-- [String Rotation](./src/chapter01ArraysAndStrings/StringRotation.java) <br />
-- [Urlify](./src/chapter01ArraysAndStrings/Urlify.java) <br />
-- [Zero Matrix](./src/chapter01ArraysAndStrings/ZeroMatrix.java) <br />
+- [Check Permutation](./arrays-strings/CheckPermutation.java) <br />
+- [Is Unique](./arrays-strings/IsUnique.java) <br />
+- [One Away](./arrays-strings/OneAway.java) <br />
+- [Palindrome Permutation](./arrays-strings/PalindromePermutation.java) <br />
+- [Rotate Matrix](./arrays-strings/RotateMatrix.java) <br />
+- [String Compression](./arrays-strings/StringCompression.java) <br />
+- [String Rotation](./arrays-strings/StringRotation.java) <br />
+- [Urlify](./arrays-strings/Urlify.java) <br />
+- [Zero Matrix](./arrays-strings/ZeroMatrix.java) <br />
 
 ### LinkedList
 
-- [Delete Middle Node](./src/chapter02LinkedList/DeleteMiddleNode.java) <br />
-- [Intersection](./src/chapter02LinkedList/Intersection.java) <br />
-- [ListNode](./src/chapter02LinkedList/ListNode.java) <br />
-- [Loop Detection](./src/chapter02LinkedList/LoopDetection.java) <br />
-- [Palindrome](./src/chapter02LinkedList/Palindrome.java) <br />
-- [Partition](./src/chapter02LinkedList/Partition.java) <br />
-- [Remove Duplicates](./src/chapter02LinkedList/RemoveDuplicates.java) <br />
-- [Return Kth To Last](./src/chapter02LinkedList/ReturnKthToLast.java) <br />
-- [Sum Lists](./src/chapter02LinkedList/SumLists.java) <br />
+- [Delete Middle Node](./linked-lists/DeleteMiddleNode.java) <br />
+- [Intersection](./linked-lists/Intersection.java) <br />
+- [ListNode](./linked-lists/ListNode.java) <br />
+- [Loop Detection](./linked-lists/LoopDetection.java) <br />
+- [Palindrome](./linked-lists/Palindrome.java) <br />
+- [Partition](./linked-lists/Partition.java) <br />
+- [Remove Duplicates](./linked-lists/RemoveDuplicates.java) <br />
+- [Return Kth To Last](./linked-lists/ReturnKthToLast.java) <br />
+- [Sum Lists](./linked-lists/SumLists.java) <br />
 
 ### Stacks and Queues
 
