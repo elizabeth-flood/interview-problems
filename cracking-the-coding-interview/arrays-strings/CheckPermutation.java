@@ -1,4 +1,5 @@
 import java.util.*;
+
 /**
  * 
  * Problem: Given two strings, write a method to decide if one is a permutation
@@ -9,7 +10,7 @@ import java.util.*;
  */
 public class CheckPermutation {
 	
-	public boolean checkPermuation(String a, String b) {
+	public boolean checkPermuationMap(String a, String b) {
 		if (a.length() != b.length()) {
        			return false;
       		}
@@ -38,13 +39,23 @@ public class CheckPermutation {
 		
 		return aMap.size() == 0;
 	}
+	
+	public String convertSort(String value) {
+		char[] valueArray = value.toCharArray();
+		Arrays.sort(valueArray); // has a return of void
+		return new String(valueArray);
+	}
+	
+	public boolean checkPermuationSort(String a, String b) {
+		return convertSort(a).equals(convertSort(b));
+	}
 
 	public static void main (String[] args) {
 		CheckPermutation cp = new CheckPermutation();
 		String[] passingPair = {"abc", "cab"};
 		String[] failingPair = {"hsc", "cab"};	
-		System.out.println(cp.checkPermuation(passingPair[0], passingPair[1]));
-		System.out.println(cp.checkPermuation(failingPair[0], failingPair[1]));
+		System.out.println(cp.checkPermuationSort(passingPair[0], passingPair[1]));
+		System.out.println(cp.checkPermuationSort(failingPair[0], failingPair[1]));
 	}
 }
 
@@ -52,4 +63,11 @@ public class CheckPermutation {
 // how to initialize String[]? => {"",""}
 // how to add to map
 // how to remove from map
+// equals in a string
+// Arrays.sort
+// char[] toCharArray()
+// sort does not return
 
+
+// overall succedded but overlooked corner cases
+// build count... MANY
