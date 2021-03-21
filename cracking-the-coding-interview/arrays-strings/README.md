@@ -12,3 +12,12 @@
 * worst case O(N) - number of keys, generally O(1) -> look up of a index in an array
 
 ## ArrayList and Resizable Arrays
+* ( Lists ) grow as you append items, arrays are fixed length. stil O(1) access. When array gets full it will double in length O(n) but happens so infrequently that amoritized insert time is O(1). 
+
+## StringBuilder
+* O(x + 2x + ... + nx) = O(xn^2)
+* Good to implement your own 
+* created resizable array of string, copying them back to a stirng only when necessary
+
+
+@todo Read More: Hash Table Collision Resolution, Rabin Karp Substring Search
