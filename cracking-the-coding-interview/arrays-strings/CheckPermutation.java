@@ -1,3 +1,4 @@
+import java.util.*;
 /**
  * 
  * Problem: Given two strings, write a method to decide if one is a permutation
@@ -7,8 +8,48 @@
  *
  */
 public class CheckPermutation {
+	
+	public boolean checkPermuation(String a, String b) {
+		if (a.length() != b.length()) {
+       			return false;
+      		}
+		// asci , sums? no these could differ
+		// hash map, store the count of the values O
+		// sort each of them, and walk through = O(nlogn) + O(nlogn) + O(n) = O(n), O(a) aSortedArray + O(b) bSortedArray
+		// some weird ass bitmanipulation.... really need to study
+		Map<Character, Integer> aMap = new HashMap<>();
+		for (int i = 0; i<a.length(); i++) {
+			Character currentChar = new Character(a.charAt(i));
+			Integer currentCount = aMap.getOrDefault(currentChar, 0);
+			aMap.put(currentChar, currentCount++);
+		}
+		
+		for (int i = 0; i< b.length(); i++) {
+			Character currentChar = new Character(b.charAt(i));
+			Integer currentCount = aMap.get(currentChar);
+			if (currentCount == null) {
+				return false;
+			} if (currentCount > 1) {
+				aMap.put(currentChar, currentCount--);
+			} else {
+				aMap.remove(currentChar);
+			}
+		}
+		
+		return aMap.size() == 0;
+	}
 
-    public static void main (String[] args) {
-	    System.out.println ("Hello World!");
-    }
+	public static void main (String[] args) {
+		CheckPermutation cp = new CheckPermutation();
+		String[] passingPair = {"abc", "cab"};
+		String[] failingPair = {"hsc", "cab"};	
+		System.out.println(cp.checkPermuation(passingPair[0], passingPair[1]));
+		System.out.println(cp.checkPermuation(failingPair[0], failingPair[1]));
+	}
 }
+
+// Google
+// how to initialize String[]? => {"",""}
+// how to add to map
+// how to remove from map
+
