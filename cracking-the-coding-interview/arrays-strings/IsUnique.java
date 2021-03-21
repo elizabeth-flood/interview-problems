@@ -1,4 +1,5 @@
 import java.util.*;
+
 /**
  * 
  * Problem: Implement an algorithm to determine if a string has all unique
@@ -7,7 +8,7 @@ import java.util.*;
  */
 public class IsUnique {
 	
-	public boolean isUnique(String input) {
+	public boolean isUniqueHashSet(String input) {
 		// string to string array to walk through each
 		// each char has a value 
 		// no extra data structure means do this on the fly
@@ -24,13 +25,28 @@ public class IsUnique {
 		return uniqueItems.size() == input.length(); // O(n)
 	}
 	
+	public boolean isUniqueIntArray(String input) {
+		if (input.length() > 128) return false;
+		
+		boolean[] intArray = new boolean[128]; // default to false
+		// O(n)
+		for (int i = 0; i < input.length(); i++) {
+			if (intArray[input.charAt(i)]) {
+				return false;
+			}
+			intArray[input.charAt(i)] = true;
+		}
+		
+		return true;
+	}
+	
     	public static void main (String[] args) {
 		IsUnique iu = new IsUnique();
 		String passInput = "aluniqe";
 		String failInput = "allunique";
 	    
-		System.out.println(iu.isUnique(passInput));
-		System.out.println(iu.isUnique(failInput));
+		System.out.println(iu.isUniqueIntArray(passInput));
+		System.out.println(iu.isUniqueIntArray(failInput));
 	}
 
 }
@@ -43,3 +59,10 @@ public class IsUnique {
 // char vs Character
 // toCharArray() and its runtime
 // charAt
+
+
+// After looking at the answer I am FAR from the most optimal
+// I could use a boolean array of a set value of 128 assuming ACSI values. this space complexity would decrease from O(n) to O(128 or c)
+// I could reduce space by 1/8 by using bit vector (need to look into it more)
+// no data scructure just iterate twice, n^2
+// do it in nlogn, sort first, but double check what sorting algorithms don't take extra storage. 
