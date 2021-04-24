@@ -20,13 +20,13 @@ public class CheckPermutation {
 		// some weird ass bitmanipulation.... really need to study
 		Map<Character, Integer> aMap = new HashMap<>();
 		for (int i = 0; i<a.length(); i++) {
-			Character currentChar = new Character(a.charAt(i));
+			Character currentChar = Character.valueOf(a.charAt(i));
 			Integer currentCount = aMap.getOrDefault(currentChar, 0);
 			aMap.put(currentChar, currentCount++);
 		}
 		
 		for (int i = 0; i< b.length(); i++) {
-			Character currentChar = new Character(b.charAt(i));
+			Character currentChar = Character.valueOf(b.charAt(i));
 			Integer currentCount = aMap.get(currentChar);
 			if (currentCount == null) {
 				return false;

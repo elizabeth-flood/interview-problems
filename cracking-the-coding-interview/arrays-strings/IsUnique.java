@@ -19,7 +19,7 @@ public class IsUnique {
 		Set<Character> uniqueItems = new HashSet<>();
 		// O(n)
 		for (int i = 0; i < input.length(); i++) {
-			uniqueItems.add(new Character(input.charAt(i)));
+			uniqueItems.add(Character.valueOf(input.charAt(i)));
 		}
 		
 		return uniqueItems.size() == input.length(); // O(n)
@@ -40,7 +40,7 @@ public class IsUnique {
 		return true;
 	}
 	
-    	public static void main (String[] args) {
+	public static void main (String[] args) {
 		IsUnique iu = new IsUnique();
 		String passInput = "aluniqe";
 		String failInput = "allunique";
