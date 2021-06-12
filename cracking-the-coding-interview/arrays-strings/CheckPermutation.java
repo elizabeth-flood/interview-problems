@@ -9,53 +9,46 @@ import java.util.*;
  *
  */
 public class CheckPermutation {
-	
-	public boolean checkPermuationMap(String a, String b) {
+	/* 
+	Brainstorming
+	- asci adding is inaccurate but can weed out failures but not worth the work
+	- make a set of a and walk through b
+	- same same with a hash map
+	- nested loop will not work
+	- do the dumb 128 character thing again
+
+	FAILED
+	- white space, capitalization
+	-- look up hints and it told me I can also sort, which I didnt' think of before
+
+	*/
+	public boolean checkPermuation(String a, String b) {
+		// fail fast
 		if (a.length() != b.length()) {
-       			return false;
-      		}
-		// asci , sums? no these could differ
-		// hash map, store the count of the values O
-		// sort each of them, and walk through = O(nlogn) + O(nlogn) + O(n) = O(n), O(a) aSortedArray + O(b) bSortedArray
-		// some weird ass bitmanipulation.... really need to study
-		Map<Character, Integer> aMap = new HashMap<>();
-		for (int i = 0; i<a.length(); i++) {
-			Character currentChar = Character.valueOf(a.charAt(i));
-			Integer currentCount = aMap.getOrDefault(currentChar, 0);
-			aMap.put(currentChar, currentCount++);
+			return false;
 		}
-		
-		for (int i = 0; i< b.length(); i++) {
-			Character currentChar = Character.valueOf(b.charAt(i));
-			Integer currentCount = aMap.get(currentChar);
-			if (currentCount == null) {
+		int[] seen = new int[128]; //0
+		for (int i = 0; i < a.length(); i++ ) {
+			seen[a.charAt(i)]++;
+		}
+		for (int i = 0; i < b.length(); i++ ) {
+			if (seen[b.charAt(i)] == 0  ) {
 				return false;
-			} if (currentCount > 1) {
-				aMap.put(currentChar, currentCount--);
-			} else {
-				aMap.remove(currentChar);
 			}
+			seen[b.charAt(i)]--;
 		}
-		
-		return aMap.size() == 0;
+
+
+		return true;
 	}
-	
-	public String convertSort(String value) {
-		char[] valueArray = value.toCharArray();
-		Arrays.sort(valueArray); // has a return of void
-		return new String(valueArray);
-	}
-	
-	public boolean checkPermuationSort(String a, String b) {
-		return convertSort(a).equals(convertSort(b));
-	}
+
 
 	public static void main (String[] args) {
 		CheckPermutation cp = new CheckPermutation();
 		String[] passingPair = {"abc", "cab"};
 		String[] failingPair = {"hsc", "cab"};	
-		System.out.println(cp.checkPermuationSort(passingPair[0], passingPair[1]));
-		System.out.println(cp.checkPermuationSort(failingPair[0], failingPair[1]));
+		System.out.println(cp.checkPermuation(passingPair[0], passingPair[1]));
+		System.out.println(cp.checkPermuation(failingPair[0], failingPair[1]));
 	}
 }
 
